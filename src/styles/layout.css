@@ -1,0 +1,106 @@
+.page-shell {
+  width: 100%;
+  min-width: 0;
+  max-width: 1100px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+.hero-layout {
+  grid-template-columns: minmax(0, 1fr);
+}
+.nav-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  padding-inline: 8px;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  transition: background-color 80ms ease;
+}
+.nav-link:hover,
+.external-link:hover {
+  background: var(--color-tertiary);
+}
+.nav-link:focus-visible,
+.external-link:focus-visible {
+  outline: 4px solid var(--color-tertiary);
+  outline-offset: 2px;
+}
+.external-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  padding-inline: 8px;
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  line-height: 1.6;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  transition: background-color 80ms ease;
+}
+.portrait-frame {
+  width: min(100%, 240px);
+  aspect-ratio: 3 / 4;
+  border: 4px solid var(--color-ink);
+  box-shadow: var(--shadow-lg);
+}
+.portrait-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-name {
+  width: 100%;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  animation: name-reveal 1800ms steps(26, end) both;
+}
+.hero-copy {
+  width: 100%;
+  min-width: 0;
+}
+.hero-role::after {
+  display: inline-block;
+  width: 0.75em;
+  content: "";
+  border-right: 4px solid currentColor;
+  animation: cursor-blink 800ms steps(2, end) infinite;
+}
+.education-flow {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: stretch;
+  gap: 24px;
+}
+.education-fragment {
+  display: contents;
+}
+.education-arrow {
+  width: 32px;
+  height: 32px;
+  justify-self: center;
+  transform: rotate(90deg);
+}
+@media (min-width: 700px) {
+  .page-shell {
+    padding-inline: 32px;
+  }
+  .project-description {
+    min-height: 15rem;
+  }
+  .hero-layout {
+    grid-template-columns: 16rem minmax(0, 1fr);
+  }
+  .education-flow {
+    grid-template-columns: 1fr 32px 1fr;
+    gap: 24px;
+  }
+  .education-arrow {
+    transform: none;
+    align-self: center;
+  }
+}

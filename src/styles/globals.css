@@ -1,0 +1,49 @@
+@import "tailwindcss";
+@import "./base.css";
+@import "./layout.css";
+@import "./motion.css";
+
+@theme {
+  --color-*: initial;
+  --text-*: initial;
+  --radius-*: initial;
+  --color-primary: #2c99d6;
+  --color-secondary: #f8fafc;
+  --color-tertiary: #eb2e33;
+  --color-ink: #000000;
+  --font-display: "Press Start 2P", ui-monospace, "Courier New", monospace;
+  --font-body: "Pixelify Sans", ui-monospace, "Courier New", monospace;
+  --font-sans: "Pixelify Sans", ui-monospace, "Courier New", monospace;
+  --text-sm: 1rem;
+  --text-md: 1.125rem;
+  --text-md--line-height: 1.6;
+  --text-lg: 1.25rem;
+  --text-display-2: 1.5rem;
+  --text-display-2--line-height: 1.5;
+  --text-display-1: 2rem;
+  --text-display-1--line-height: 1.5;
+  --leading-body: 1.6;
+  --leading-display: 1.5;
+  --container-copy: 70ch;
+  --shadow-sm: 4px 4px 0 var(--color-ink);
+  --shadow-md: 6px 6px 0 var(--color-ink);
+  --shadow-lg: 8px 8px 0 var(--color-ink);
+  --duration-fast: 80ms;
+}
+
+@utility pixel-corners {
+  clip-path: polygon(
+    0 8px,
+    8px 8px,
+    8px 0,
+    calc(100% - 8px) 0,
+    calc(100% - 8px) 8px,
+    100% 8px,
+    100% calc(100% - 8px),
+    calc(100% - 8px) calc(100% - 8px),
+    calc(100% - 8px) 100%,
+    8px 100%,
+    8px calc(100% - 8px),
+    0 calc(100% - 8px)
+  );
+}

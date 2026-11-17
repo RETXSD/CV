@@ -1,0 +1,53 @@
+@keyframes name-reveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes cursor-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.project-frame {
+  transition: transform 80ms ease;
+}
+.project-frame article {
+  transition: box-shadow 80ms ease;
+}
+.project-frame:hover {
+  transform: translate(-2px, -2px);
+}
+.project-frame:hover article {
+  box-shadow: 8px 8px 0 var(--color-ink);
+}
+.project-frame:active {
+  transform: translate(6px, 6px);
+}
+.project-frame:active article {
+  box-shadow: 0 0 0 var(--color-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .hero-name {
+    clip-path: none;
+  }
+  .hero-role::after {
+    animation: none;
+  }
+}

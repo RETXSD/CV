@@ -1,0 +1,31 @@
+@layer base {
+  :root {
+    font-family: var(--font-body);
+    color: var(--color-ink);
+    background: var(--color-secondary);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    min-width: 360px;
+    margin: 0;
+    overflow-x: hidden;
+    background: var(--color-secondary);
+  }
+  button,
+  a {
+    font: inherit;
+  }
+  a {
+    color: inherit;
+  }
+}
