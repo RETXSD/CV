@@ -2,7 +2,7 @@ import { contentByLanguage } from "@/data/content-translations";
 import { messages, useLocale } from "@/lib/locale";
 
 export function Navbar() {
-  const { language, toggleLanguage } = useLocale();
+  const { language, toggleLanguage, isTransitioning, isSoundEnabled, toggleBackgroundSound } = useLocale();
   const content = contentByLanguage[language];
   const text = messages[language];
   const links = [
@@ -22,7 +22,7 @@ export function Navbar() {
         >
           Cornelius
         </a>
-        <nav aria-label={text.nav.label} className="site-navigation order-3 w-full md:order-2 md:w-auto">
+        <nav aria-label={text.nav.label} className="site-navigation order-4 w-full md:order-2 md:w-auto">
           <ul className="site-nav-list">
             {navLinks.map((link) => (
               <li key={link.id}>
@@ -39,8 +39,19 @@ export function Navbar() {
           onClick={toggleLanguage}
           title={text.switchLanguage}
           type="button"
+          disabled={isTransitioning}
         >
           {text.languageCode}
+        </button>
+        <button
+          aria-label={isSoundEnabled ? text.sound.disable : text.sound.enable}
+          aria-pressed={isSoundEnabled}
+          className="language-toggle font-body text-md text-ink focus-visible:outline-tertiary order-3 min-h-11 border-2 border-ink bg-secondary px-3 leading-normal shadow-sm transition-colors hover:bg-tertiary focus-visible:outline-4 focus-visible:outline-offset-2 md:order-4"
+          onClick={toggleBackgroundSound}
+          title={isSoundEnabled ? text.sound.disable : text.sound.enable}
+          type="button"
+        >
+          {isSoundEnabled ? text.sound.on : text.sound.off}
         </button>
       </div>
     </header>
