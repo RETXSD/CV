@@ -226,7 +226,7 @@ main > .content-section:nth-of-type(even) {
 }
 .education-highlights {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   margin-top: 28px;
 }
 .gpa-highlight {
