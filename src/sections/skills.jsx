@@ -28,7 +28,7 @@ export function Skills() {
 function SkillGroup({ title, values }) {
   if (!values || values.length === 0) return null;
   return (
-    <div className="flex flex-col gap-3">
+    <div className="skill-group flex flex-col gap-3" data-reveal>
       <h3 className="font-body text-ink text-lg leading-normal">{title}</h3>
       <div className="flex flex-wrap gap-2">
         {values.map((value) => (

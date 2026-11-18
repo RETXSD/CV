@@ -16,7 +16,7 @@ export function Education() {
       <div className="education-flow">
         {content.education.map((item, index) => (
           <div className="education-fragment" key={item.school}>
-            <article className="border-ink bg-secondary flex h-full flex-col gap-3 border-4 p-6 shadow-md">
+            <article className="education-card border-ink bg-secondary flex h-full flex-col gap-3 border-4 p-6 shadow-md">
               <h3 className="font-body text-ink text-lg leading-normal">{item.school}</h3>
               <p className="font-body text-ink text-sm leading-normal">
                 {item.place} · {item.period}

@@ -22,18 +22,20 @@ function hidePortraitReveal(event) {
 
 export function Hero() {
   return (
-    <section id="top" aria-labelledby="hero-title" className="border-ink bg-primary border-b-4 py-12 md:py-16">
-      <div className="page-shell hero-layout grid items-center gap-8 py-16 md:gap-12 md:py-24">
-        <div
-          className="portrait-frame"
-          onPointerEnter={revealPortrait}
-          onPointerMove={revealPortrait}
-          onPointerLeave={hidePortraitReveal}
-        >
+    <section id="top" aria-labelledby="hero-title" className="hero-section">
+      <div className="pixel-leaf-field" aria-hidden="true">
+        <span className="pixel-leaf leaf-one" />
+        <span className="pixel-leaf leaf-two" />
+        <span className="pixel-leaf leaf-three" />
+        <span className="pixel-leaf leaf-four" />
+        <span className="pixel-leaf leaf-five" />
+      </div>
+      <div className="page-shell hero-layout grid items-center gap-8">
+        <div className="portrait-frame" onPointerEnter={revealPortrait} onPointerMove={revealPortrait} onPointerLeave={hidePortraitReveal}>
           <img src={portraitPixel} width="600" height="800" fetchPriority="high" alt="Foto formal Cornelius Adrian Putra" className="portrait-image portrait-pixel pixel-corners" />
           <img src={portraitClear} width="600" height="800" alt="" aria-hidden="true" className="portrait-image portrait-clear pixel-corners" />
         </div>
-        <div className="hero-copy flex flex-col items-start gap-6">
+        <div className="hero-copy flex flex-col items-start gap-6" data-reveal>
           <h1 id="hero-title" className="hero-name font-display leading-display text-ink md:text-display-1 text-lg">
             {content.name}
           </h1>

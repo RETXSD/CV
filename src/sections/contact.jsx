@@ -17,13 +17,15 @@ export function Contact() {
   if (entries.length === 0) return null;
   return (
     <Section id="contact" title="Kontak">
-      <ul className="flex flex-wrap gap-6">
-        {entries.map((entry) => (
-          <li key={entry.href}>
-            <ExternalLink href={entry.href}>{entry.label}</ExternalLink>
-          </li>
-        ))}
-      </ul>
+      <div className="contact-panel" data-reveal>
+        <ul className="flex flex-wrap gap-4">
+          {entries.map((entry) => (
+            <li key={entry.href}>
+              <ExternalLink href={entry.href}>{entry.label}</ExternalLink>
+            </li>
+          ))}
+        </ul>
+      </div>
     </Section>
   );
 }
