@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { content } from "@/data/content";
 
 const links = [
@@ -20,11 +19,6 @@ export function Navbar() {
         >
           Cornelius
         </a>
-        {content.cvFile && (
-          <Button className="order-2 md:order-3" href={`${import.meta.env.BASE_URL}${content.cvFile}`} download variant="primary">
-            Unduh CV
-          </Button>
-        )}
         <nav aria-label="Navigasi utama" className="site-navigation order-3 w-full md:order-2 md:w-auto">
           <ul className="site-nav-list">
             {navLinks.map((link) => (
