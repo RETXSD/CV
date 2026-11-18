@@ -7,7 +7,7 @@ export const content = {
   contact: {
     city: "Tangerang",
     email: "andrianandrian761@gmail.com",
-    phone: null,
+    phone: "+6287726997580",
     linkedin: null,
     github: null,
   },
