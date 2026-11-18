@@ -7,6 +7,7 @@ import { Education } from "@/sections/education";
 import { Hero } from "@/sections/hero";
 import { Projects } from "@/sections/projects";
 import { Skills } from "@/sections/skills";
+import { LocaleProvider } from "@/lib/locale";
 
 export default function App() {
   useEffect(() => {
@@ -38,7 +39,7 @@ export default function App() {
   }, []);
 
   return (
-    <>
+    <LocaleProvider>
       <Navbar />
       <main>
         <Hero />
@@ -49,6 +50,6 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
-    </>
+    </LocaleProvider>
   );
 }

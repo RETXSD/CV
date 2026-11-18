@@ -1,7 +1,8 @@
 import portraitClear from "@/assets/foto-profil.jpg";
 import portraitPixel from "@/assets/foto-profil-pixel.png";
 import { Badge } from "@/components/ui/badge";
-import { content } from "@/data/content";
+import { contentByLanguage } from "@/data/content-translations";
+import { messages, useLocale } from "@/lib/locale";
 
 function revealPortrait(event) {
   const frame = event.currentTarget;
@@ -34,6 +35,10 @@ function hidePortraitReveal(event) {
 }
 
 export function Hero() {
+  const { language } = useLocale();
+  const content = contentByLanguage[language];
+  const text = messages[language];
+
   return (
     <section id="top" aria-labelledby="hero-title" className="hero-section">
       <div className="pixel-leaf-field" aria-hidden="true">
@@ -45,10 +50,10 @@ export function Hero() {
       </div>
       <div className="page-shell hero-layout grid items-center gap-8">
         <div className="portrait-frame" onPointerEnter={revealPortrait} onPointerMove={revealPortrait} onPointerDown={revealPortrait} onPointerLeave={hidePortraitReveal}>
-          <img src={portraitPixel} width="600" height="800" fetchPriority="high" alt="Foto formal Cornelius Adrian Putra" className="portrait-image portrait-pixel pixel-corners" />
+          <img src={portraitPixel} width="600" height="800" fetchPriority="high" alt={text.hero.portraitAlt} className="portrait-image portrait-pixel pixel-corners" />
           <img src={portraitClear} width="600" height="800" alt="" aria-hidden="true" className="portrait-image portrait-clear pixel-corners" />
           <span className="portrait-touch-hint" aria-hidden="true">
-            SENTUH FOTO
+            {text.hero.touchHint}
           </span>
         </div>
         <div className="hero-copy flex flex-col items-start gap-6" data-reveal>
@@ -57,7 +62,7 @@ export function Hero() {
           </h1>
           <p className="hero-role font-body text-ink leading-body text-lg">{content.headline}</p>
           <div className="flex flex-wrap items-center gap-2">
-            <span className="font-body text-md text-ink leading-body">Ketertarikan:</span>
+            <span className="font-body text-md text-ink leading-body">{text.hero.interests}</span>
             {content.interests.map((interest) => (
               <Badge key={interest}>{interest}</Badge>
             ))}

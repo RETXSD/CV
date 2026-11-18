@@ -1,5 +1,6 @@
 import { Section } from "@/components/ui/section";
-import { content } from "@/data/content";
+import { contentByLanguage } from "@/data/content-translations";
+import { messages, useLocale } from "@/lib/locale";
 
 function TransferArrow() {
   return (
@@ -10,8 +11,11 @@ function TransferArrow() {
 }
 
 export function Education() {
+  const { language } = useLocale();
+  const content = contentByLanguage[language];
+
   return (
-    <Section id="education" title="Pendidikan">
+    <Section id="education" title={messages[language].sections.education}>
       <div className="education-flow">
         {content.education.map((item, index) => (
           <div className="education-fragment" key={item.school}>
@@ -30,7 +34,7 @@ export function Education() {
       {content.gpa && (
         <div className="education-highlights">
           <div className="gpa-highlight">
-            <span className="gpa-label">IPK</span>
+            <span className="gpa-label">{messages[language].education.gpa}</span>
             <p className="gpa-value">
               <strong>{content.gpa.score}</strong>
               <span>{content.gpa.scale}</span>
