@@ -1,4 +1,5 @@
 import mapleLeaf from "@/assets/Daun Maple Musim Gugur Piksel.png";
+import technologyArt from "@/assets/Ikon Teknologi Pixel Retro.png";
 
 export function Section({ id, title, children }) {
   return (
@@ -6,6 +7,7 @@ export function Section({ id, title, children }) {
       <div className="section-leaf-field" aria-hidden="true">
         <img className="section-leaf section-leaf-one" src={mapleLeaf} alt="" />
         <img className="section-leaf section-leaf-two" src={mapleLeaf} alt="" />
+        {id === "skills" && <img className="section-tech-art" src={technologyArt} alt="" />}
       </div>
       <div className="page-shell section-inner">
         <header className="section-heading">
