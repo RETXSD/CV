@@ -216,18 +216,21 @@
   counter-increment: section-order;
   border-top: 1px solid rgb(0 0 0 / 10%);
   padding-block: clamp(64px, 8vw, 104px);
-  background-image: radial-gradient(ellipse at 12% 18%, rgb(44 153 214 / 7%), transparent 36rem), radial-gradient(circle, rgb(0 0 0 / 5%) 0.8px, transparent 1px);
+  background-image:
+    radial-gradient(ellipse at 88% 18%, rgb(121 169 78 / 15%), transparent 24rem), radial-gradient(ellipse at 12% 82%, rgb(44 153 214 / 9%), transparent 30rem),
+    radial-gradient(circle, rgb(44 153 214 / 12%) 0.9px, transparent 1.2px);
   background-size:
     auto,
-    18px 18px;
+    auto,
+    16px 16px;
 }
 .content-section::after {
   position: absolute;
   z-index: 0;
   right: clamp(20px, 8vw, 96px);
   top: clamp(16px, 3vw, 32px);
-  width: 76px;
-  height: 84px;
+  width: 92px;
+  height: 100px;
   background: var(--color-leaf);
   clip-path: polygon(
     36% 0,
@@ -255,8 +258,9 @@
     14% 16%,
     36% 16%
   );
-  opacity: 0.12;
+  opacity: 0.24;
   pointer-events: none;
+  filter: drop-shadow(4px 4px 0 rgb(0 0 0 / 12%));
   transform: rotate(18deg);
 }
 main > .content-section:nth-of-type(even)::after {
@@ -609,7 +613,7 @@ main > .content-section:nth-of-type(even) {
     top: 14px;
     width: 56px;
     height: 62px;
-    opacity: 0.08;
+    opacity: 0.14;
   }
 }
 @media (hover: none) and (max-width: 767px) {
