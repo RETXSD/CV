@@ -312,20 +312,57 @@ main > .content-section:nth-of-type(even) {
   background: var(--color-primary);
   box-shadow: var(--shadow-lg);
 }
-.contact-panel .external-link {
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.contact-item {
+  display: flex;
+  min-width: 0;
+  min-height: 112px;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px;
   border: 2px solid var(--color-ink);
   background: var(--color-secondary);
   box-shadow: var(--shadow-sm);
-  text-decoration: none;
+}
+.contact-kind {
+  color: var(--color-tertiary);
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+.contact-link {
+  display: flex;
+  min-width: 0;
+  min-height: 44px;
+  align-items: center;
+  overflow-wrap: anywhere;
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  line-height: 1.45;
+  text-decoration: underline;
+  text-underline-offset: 4px;
   transition:
     background-color 120ms ease,
     transform 120ms ease,
     box-shadow 120ms ease;
 }
-.contact-panel .external-link:hover {
+.contact-link:hover {
   transform: translate(-2px, -2px);
   background: var(--color-tertiary);
   box-shadow: var(--shadow-md);
+}
+.contact-link:focus-visible {
+  outline: 4px solid var(--color-ink);
+  outline-offset: 2px;
 }
 .pixel-leaf-field {
   position: absolute;
