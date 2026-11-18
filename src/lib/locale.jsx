@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useRef, useState } from "react";
+import glitchSound from "@/assets/Language Switch Glitch.mp3";
 import { capturePixelMosaic, playPixelWave } from "@/lib/pixel-wave";
 
 const LocaleContext = createContext(null);
@@ -80,6 +81,7 @@ export function LocaleProvider({ children }) {
   const [language, setLanguage] = useState(getInitialLanguage);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const canvasRef = useRef(null);
+  const audioRef = useRef(null);
   const languageRef = useRef(language);
   const transitionRef = useRef(false);
 
@@ -109,6 +111,15 @@ export function LocaleProvider({ children }) {
 
     transitionRef.current = true;
     setIsTransitioning(true);
+    try {
+      const transitionAudio = new Audio(glitchSound);
+      transitionAudio.loop = true;
+      transitionAudio.volume = 0.35;
+      audioRef.current = transitionAudio;
+      transitionAudio.play().catch(() => {});
+    } catch {
+      audioRef.current = null;
+    }
     let languageApplied = false;
     try {
       const oldPage = await capturePixelMosaic(canvas);
@@ -128,6 +139,9 @@ export function LocaleProvider({ children }) {
         setLanguage(nextLanguage);
       }
     } finally {
+      audioRef.current?.pause();
+      if (audioRef.current) audioRef.current.currentTime = 0;
+      audioRef.current = null;
       const context = canvas.getContext("2d");
       context?.clearRect(0, 0, canvas.width, canvas.height);
       canvas.hidden = true;
