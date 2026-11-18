@@ -20,7 +20,7 @@ export function Navbar() {
           className="font-body text-ink focus-visible:outline-tertiary duration-fast hover:bg-tertiary order-1 px-2 text-lg leading-normal transition-colors focus-visible:outline-4 focus-visible:outline-offset-2"
           href="#top"
         >
-          Cornelius
+          Cornelius Adrian Putra
         </a>
         <nav aria-label={text.nav.label} className="site-navigation order-4 w-full md:order-2 md:w-auto">
           <ul className="site-nav-list">
