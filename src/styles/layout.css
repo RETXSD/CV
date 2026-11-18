@@ -69,6 +69,20 @@
 .portrait-frame[data-revealing="true"] .portrait-clear {
   opacity: 1;
 }
+.portrait-touch-hint {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  right: 10px;
+  padding: 6px 8px;
+  border: 2px solid var(--color-ink);
+  background: var(--color-secondary);
+  font-family: var(--font-display);
+  font-size: 0.5rem;
+  line-height: 1.5;
+  pointer-events: none;
+}
 .hero-name {
   width: 100%;
   max-width: 100%;
@@ -537,5 +551,10 @@ main > .content-section:nth-of-type(even) {
   }
   .contact-item {
     padding: 12px;
+  }
+}
+@media (hover: none) and (max-width: 767px) {
+  .portrait-touch-hint {
+    display: block;
   }
 }
