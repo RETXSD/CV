@@ -131,6 +131,21 @@
 .site-header .page-shell {
   min-height: 72px;
 }
+.site-navigation {
+  min-width: 0;
+}
+.site-nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  line-height: 1.5;
+  list-style: none;
+}
 .nav-link {
   transition:
     background-color 120ms ease,
@@ -483,5 +498,44 @@ main > .content-section:nth-of-type(even) {
     align-items: flex-start;
     flex-direction: column;
     gap: 8px;
+  }
+}
+@media (max-width: 767px) {
+  .site-nav-list {
+    justify-content: center;
+  }
+  .education-card {
+    padding: 20px;
+  }
+  .project-description {
+    min-height: 0;
+  }
+  .contact-panel {
+    padding: 20px;
+  }
+}
+@media (max-width: 380px) {
+  .page-shell {
+    padding-inline: 16px;
+  }
+  .hero-layout {
+    gap: 24px;
+    padding-block: 52px;
+  }
+  .portrait-frame {
+    width: min(100%, 232px);
+  }
+  .nav-link {
+    padding-inline: 6px;
+    font-size: 1rem;
+  }
+  .badge-chip {
+    padding-inline: 10px;
+  }
+  .contact-panel {
+    padding: 16px;
+  }
+  .contact-item {
+    padding: 12px;
   }
 }
