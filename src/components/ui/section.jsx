@@ -1,6 +1,12 @@
+import mapleLeaf from "@/assets/Daun Maple Musim Gugur Piksel.png";
+
 export function Section({ id, title, children }) {
   return (
     <section id={id} aria-labelledby={`${id}-title`} className="content-section scroll-mt-24" data-reveal>
+      <div className="section-leaf-field" aria-hidden="true">
+        <img className="section-leaf section-leaf-one" src={mapleLeaf} alt="" />
+        <img className="section-leaf section-leaf-two" src={mapleLeaf} alt="" />
+      </div>
       <div className="page-shell section-inner">
         <header className="section-heading">
           <span className="section-index" aria-hidden="true" />

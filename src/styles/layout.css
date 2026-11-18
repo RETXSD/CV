@@ -224,48 +224,35 @@
     auto,
     16px 16px;
 }
-.content-section::after {
+.section-leaf-field {
   position: absolute;
   z-index: 0;
-  right: clamp(20px, 8vw, 96px);
-  top: clamp(16px, 3vw, 32px);
-  width: 92px;
-  height: 100px;
-  background: var(--color-leaf);
-  clip-path: polygon(
-    36% 0,
-    64% 0,
-    64% 10%,
-    82% 10%,
-    82% 22%,
-    100% 22%,
-    100% 48%,
-    86% 48%,
-    86% 62%,
-    72% 62%,
-    72% 74%,
-    58% 74%,
-    58% 100%,
-    42% 100%,
-    42% 78%,
-    26% 78%,
-    26% 66%,
-    12% 66%,
-    12% 52%,
-    0 52%,
-    0 28%,
-    14% 28%,
-    14% 16%,
-    36% 16%
-  );
-  opacity: 0.24;
+  inset: 0;
+  overflow: hidden;
   pointer-events: none;
-  filter: drop-shadow(4px 4px 0 rgb(0 0 0 / 12%));
-  transform: rotate(18deg);
 }
-main > .content-section:nth-of-type(even)::after {
-  background: var(--color-primary);
-  transform: rotate(-18deg) scale(0.84);
+.section-leaf {
+  position: absolute;
+  display: block;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(4px 4px 0 rgb(0 0 0 / 14%));
+  animation: leaf-sway 10s ease-in-out infinite;
+}
+.section-leaf-one {
+  top: 16px;
+  right: clamp(20px, 8vw, 96px);
+  width: clamp(76px, 9vw, 118px);
+  opacity: 0.32;
+  --leaf-angle: 12deg;
+}
+.section-leaf-two {
+  bottom: 12px;
+  left: clamp(16px, 6vw, 72px);
+  width: clamp(42px, 5vw, 72px);
+  opacity: 0.18;
+  --leaf-angle: -24deg;
+  animation-delay: -4s;
 }
 .section-inner {
   position: relative;
@@ -608,11 +595,16 @@ main > .content-section:nth-of-type(even) {
   .contact-item {
     padding: 12px;
   }
-  .content-section::after {
+  .section-leaf-one {
     right: 14px;
     top: 14px;
-    width: 56px;
-    height: 62px;
+    width: 72px;
+    opacity: 0.26;
+  }
+  .section-leaf-two {
+    bottom: 10px;
+    left: 10px;
+    width: 42px;
     opacity: 0.14;
   }
 }
