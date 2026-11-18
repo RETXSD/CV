@@ -27,8 +27,7 @@ export const content = {
       note: "Bagian dari program 2+2",
     },
   ],
-  gpa: "3,83 / 4,00 (semester 1–6)",
-  relevantCourses: ["Interaksi Manusia dan Komputer (HCI)"],
+  gpa: { score: "3,83", scale: "/ 4,00", period: "Semester 1–6" },
   projects: [
     {
       title: "Sistem Admin dengan Autentikasi RBAC",

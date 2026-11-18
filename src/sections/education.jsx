@@ -1,4 +1,3 @@
-import { Badge } from "@/components/ui/badge";
 import { Section } from "@/components/ui/section";
 import { content } from "@/data/content";
 
@@ -28,10 +27,18 @@ export function Education() {
           </div>
         ))}
       </div>
-      <div className="font-body text-md text-ink mt-6 flex flex-wrap items-center gap-4 leading-normal">
-        {content.gpa && <p>IPK {content.gpa}</p>}
-        {content.relevantCourses.length > 0 && <Badge>{content.relevantCourses[0]}</Badge>}
-      </div>
+      {content.gpa && (
+        <div className="education-highlights">
+          <div className="gpa-highlight">
+            <span className="gpa-label">IPK</span>
+            <p className="gpa-value">
+              <strong>{content.gpa.score}</strong>
+              <span>{content.gpa.scale}</span>
+            </p>
+            <span className="gpa-period">{content.gpa.period}</span>
+          </div>
+        </div>
+      )}
     </Section>
   );
 }

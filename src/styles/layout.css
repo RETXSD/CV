@@ -217,11 +217,59 @@ main > .content-section:nth-of-type(even) {
   opacity: 0.14;
 }
 .about-note {
+  width: 100%;
   padding: clamp(20px, 3vw, 32px);
   border: 3px solid var(--color-ink);
   border-left: 8px solid var(--color-tertiary);
   background: var(--color-secondary);
   box-shadow: var(--shadow-sm);
+}
+.education-highlights {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 28px;
+}
+.gpa-highlight {
+  display: grid;
+  min-width: min(100%, 240px);
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 4px 14px;
+  padding: 16px 22px;
+  border: 3px solid var(--color-ink);
+  border-left: 8px solid var(--color-tertiary);
+  background: var(--color-secondary);
+  box-shadow: var(--shadow-md);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+.gpa-highlight:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 var(--color-ink);
+}
+.gpa-label {
+  grid-row: span 2;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+}
+.gpa-value {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+.gpa-value strong {
+  color: var(--color-tertiary);
+  font-size: 1.65rem;
+  line-height: 1;
+}
+.gpa-period {
+  grid-column: 2;
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 .education-card {
   box-shadow: var(--shadow-md);
