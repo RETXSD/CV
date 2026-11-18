@@ -1,4 +1,5 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useRef, useState } from "react";
+import { capturePixelMosaic, playPixelWave } from "@/lib/pixel-wave";
 
 const LocaleContext = createContext(null);
 const STORAGE_KEY = "cornelius-portfolio-language";
@@ -77,6 +78,10 @@ function getInitialLanguage() {
 
 export function LocaleProvider({ children }) {
   const [language, setLanguage] = useState(getInitialLanguage);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const canvasRef = useRef(null);
+  const languageRef = useRef(language);
+  const transitionRef = useRef(false);
 
   useEffect(() => {
     document.documentElement.lang = language;
@@ -91,9 +96,52 @@ export function LocaleProvider({ children }) {
     }
   }, [language]);
 
-  const toggleLanguage = () => setLanguage((current) => (current === "id" ? "en" : "id"));
+  const toggleLanguage = async () => {
+    if (transitionRef.current) return;
 
-  return <LocaleContext.Provider value={{ language, toggleLanguage }}>{children}</LocaleContext.Provider>;
+    const nextLanguage = languageRef.current === "id" ? "en" : "id";
+    const canvas = canvasRef.current;
+    if (!canvas || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      languageRef.current = nextLanguage;
+      setLanguage(nextLanguage);
+      return;
+    }
+
+    transitionRef.current = true;
+    setIsTransitioning(true);
+    let languageApplied = false;
+    try {
+      const oldPage = await capturePixelMosaic(canvas);
+      canvas.hidden = false;
+      await playPixelWave(canvas, oldPage, "cover");
+
+      languageRef.current = nextLanguage;
+      setLanguage(nextLanguage);
+      languageApplied = true;
+      await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+
+      const newPage = await capturePixelMosaic(canvas);
+      await playPixelWave(canvas, newPage, "reveal");
+    } catch {
+      if (!languageApplied) {
+        languageRef.current = nextLanguage;
+        setLanguage(nextLanguage);
+      }
+    } finally {
+      const context = canvas.getContext("2d");
+      context?.clearRect(0, 0, canvas.width, canvas.height);
+      canvas.hidden = true;
+      transitionRef.current = false;
+      setIsTransitioning(false);
+    }
+  };
+
+  return (
+    <LocaleContext.Provider value={{ language, toggleLanguage, isTransitioning }}>
+      {children}
+      <canvas ref={canvasRef} aria-hidden="true" className="pixel-wave-canvas" data-html2canvas-ignore="true" hidden />
+    </LocaleContext.Provider>
+  );
 }
 
 export function useLocale() {

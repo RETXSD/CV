@@ -148,6 +148,16 @@
 .site-navigation {
   min-width: 0;
 }
+.pixel-wave-canvas {
+  position: fixed;
+  z-index: 50;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: auto;
+  touch-action: none;
+  image-rendering: pixelated;
+}
 .site-nav-list {
   display: flex;
   flex-wrap: wrap;
