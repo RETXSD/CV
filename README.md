@@ -18,7 +18,7 @@ Antarmuka menggunakan tema pixel art bernuansa retro, tata letak responsif, pili
 - **React 19** untuk komponen dan antarmuka.
 - **Vite 6** untuk server pengembangan dan build produksi.
 - **Tailwind CSS v4** serta CSS proyek untuk tata letak, tema, dan animasi.
-- **Vercel Web Analytics** untuk menghitung kunjungan dan page views setelah fitur Analytics diaktifkan pada proyek Vercel.
+- **Vercel Web Analytics** untuk menghitung kunjungan dan page views, serta **Speed Insights** untuk memantau metrik performa web setelah keduanya diaktifkan di proyek Vercel.
 
 ## Menjalankan secara lokal
 
@@ -56,7 +56,7 @@ Nilai kontak atau tautan yang belum tersedia bisa dibiarkan `null`, dan daftar y
 
 Hubungkan repository GitHub ini ke Vercel dan deploy sebagai proyek Vite. Jika repository sudah terhubung, push ke branch deployment (biasanya `main`) akan membuat deployment baru.
 
-Komponen Vercel Analytics sudah dipasang di aplikasi. Untuk mulai mengumpulkan data, buka proyek di dashboard Vercel, pilih **Analytics**, lalu aktifkan **Web Analytics**. Data kunjungan akan muncul setelah deployment aktif dan situs dikunjungi.
+Komponen Vercel Analytics dan Speed Insights sudah dipasang di aplikasi. Untuk mulai mengumpulkan data, buka proyek di dashboard Vercel, lalu aktifkan **Web Analytics** dan **Speed Insights**. Data kunjungan dan metrik performa akan muncul setelah deployment aktif dan situs dikunjungi.
 
 ### GitHub Pages
 

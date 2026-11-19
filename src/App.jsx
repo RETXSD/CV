@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { About } from "@/sections/about";
@@ -52,6 +53,7 @@ export default function App() {
       </main>
       <Footer />
       <Analytics />
+      <SpeedInsights />
     </LocaleProvider>
   );
 }
