@@ -47,7 +47,7 @@ export const content = {
     {
       title: "Task Manager dengan 9 Design Pattern",
       kind: "Proyek kuliah",
-      year: 2025,
+      year: 2026,
       description:
         "Membangun aplikasi task manager dengan Spring Boot yang menerapkan 9 design pattern: Facade, Factory, Singleton, Decorator, Observer, State, Strategy, Command, dan Builder.",
       tools: ["Java", "Spring Boot", "MySQL"],
@@ -83,7 +83,7 @@ export const content = {
     {
       title: "Nihonggo — Aplikasi Belajar Bahasa Jepang",
       kind: "Proyek pribadi",
-      year: null,
+      year: 2026,
       description:
         "Aplikasi iOS untuk belajar bahasa Jepang dengan materi JLPT N5–N1, latihan kana, kamus lokal, pelafalan audio, pemindaian kana dengan Core ML, OCR kalimat, dan tutor AI multibahasa.",
       tools: ["Swift", "SwiftUI", "Core ML", "Vision", "AVFoundation"],
