@@ -31,7 +31,7 @@ export const content = {
   projects: [
     {
       title: "Sistem Admin dengan Autentikasi RBAC",
-      kind: "Proyek kuliah",
+      kind: "Proyek Kuliah",
       year: 2025,
       description: "Membangun sistem admin sederhana dengan autentikasi dan pengaturan hak akses berbasis peran (Role-Based Access Control).",
       tools: ["Laravel", "MySQL"],
@@ -46,7 +46,7 @@ export const content = {
     },
     {
       title: "Task Manager dengan 9 Design Pattern",
-      kind: "Proyek kuliah",
+      kind: "Proyek Kuliah",
       year: 2026,
       description:
         "Membangun aplikasi task manager dengan Spring Boot yang menerapkan 9 design pattern: Facade, Factory, Singleton, Decorator, Observer, State, Strategy, Command, dan Builder.",
@@ -62,7 +62,7 @@ export const content = {
     },
     {
       title: "Monitoring Ketinggian Air Berbasis IoT (MQTT & AES)",
-      kind: "Proyek kuliah",
+      kind: "Proyek Kuliah",
       year: 2025,
       description:
         "Merancang sistem monitoring ketinggian air dengan dua ESP32 (publisher–subscriber), sensor ultrasonik HC-SR04, enkripsi AES-128 (mode CBC), dan MQTT melalui HiveMQ Cloud dengan TLS. Hasil ditampilkan di layar OLED dan LED indikator.",
@@ -82,12 +82,12 @@ export const content = {
     },
     {
       title: "Nihonggo — Aplikasi Belajar Bahasa Jepang",
-      kind: "Proyek pribadi",
+      kind: "Proyek Kuliah",
       year: 2026,
       description:
         "Aplikasi iOS untuk belajar bahasa Jepang dengan materi JLPT N5–N1, latihan kana, kamus lokal, pelafalan audio, pemindaian kana dengan Core ML, OCR kalimat, dan tutor AI multibahasa.",
       tools: ["Swift", "SwiftUI", "Core ML", "Vision", "AVFoundation"],
-      role: "Proyek solo",
+      role: "Mengerjakan sendiri",
       links: [
         {
           label: "GitHub: Lihat kode",
