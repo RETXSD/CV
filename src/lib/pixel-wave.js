@@ -1,5 +1,11 @@
 const clamp = (value, min = 0, max = 1) => Math.max(min, Math.min(value, max));
 const pixelRound = (value, ratio) => Math.round(value * ratio) / ratio;
+const isTransparentColor = (value) => value === "transparent" || /rgba\([^)]*,\s*0(?:\.0+)?\s*\)$/.test(value);
+
+function getPageBackgroundColor() {
+  const background = getComputedStyle(document.body).backgroundColor;
+  return isTransparentColor(background) ? "#f8fafc" : background;
+}
 
 export async function capturePixelMosaic(overlay) {
   const width = window.innerWidth;
@@ -12,7 +18,7 @@ export async function capturePixelMosaic(overlay) {
     const scrollY = window.scrollY;
     const { default: html2canvas } = await import("html2canvas");
     const options = {
-      backgroundColor: null,
+      backgroundColor: getPageBackgroundColor(),
       height,
       ignoreElements: (element) => element === overlay,
       logging: false,
@@ -56,8 +62,7 @@ function captureColorMosaic(overlay, mosaic) {
   overlay.hidden = true;
   const colors = [];
   const { width, height, cell, cols, rows } = mosaic;
-  const fallback = getComputedStyle(document.body).backgroundColor;
-  const isTransparent = (value) => value === "transparent" || /rgba\([^)]*,\s*0(?:\.0+)?\s*\)$/.test(value);
+  const fallback = getPageBackgroundColor();
 
   for (let row = 0; row < rows; row += 1) {
     for (let col = 0; col < cols; col += 1) {
@@ -67,7 +72,7 @@ function captureColorMosaic(overlay, mosaic) {
       let color = fallback;
       while (element && element !== overlay) {
         const background = getComputedStyle(element).backgroundColor;
-        if (background && !isTransparent(background)) {
+        if (background && !isTransparentColor(background)) {
           color = background;
           break;
         }
