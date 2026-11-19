@@ -68,6 +68,26 @@
   }
 }
 
+@keyframes pixel-rise {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: var(--pixel-opacity);
+  }
+  50% {
+    transform: translate3d(var(--pixel-drift), -50vh, 0) rotate(90deg);
+  }
+  88% {
+    opacity: var(--pixel-opacity);
+  }
+  100% {
+    transform: translate3d(var(--pixel-drift), -110vh, 0) rotate(180deg);
+    opacity: 0;
+  }
+}
+
 @keyframes leaf-sway {
   0%,
   100% {
@@ -101,6 +121,9 @@
     animation: none;
   }
   .pixel-leaf {
+    display: none;
+  }
+  .hero-rising-pixel {
     display: none;
   }
   [data-reveal][data-revealed="true"] {

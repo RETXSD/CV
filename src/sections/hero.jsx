@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import portraitClear from "@/assets/foto-profil.jpg";
 import portraitPixel from "@/assets/foto-profil-pixel.png";
 import { Badge } from "@/components/ui/badge";
@@ -38,9 +39,29 @@ export function Hero() {
   const { language } = useLocale();
   const content = contentByLanguage[language];
   const text = messages[language];
+  const risingPixels = useMemo(
+    () =>
+      Array.from({ length: 26 }, (_, index) => ({
+        id: index,
+        style: {
+          "--pixel-left": `${4 + Math.random() * 92}%`,
+          "--pixel-size": `${3 + Math.random() * 5}px`,
+          "--pixel-duration": `${7 + Math.random() * 8}s`,
+          "--pixel-delay": `${-Math.random() * 15}s`,
+          "--pixel-drift": `${(Math.random() - 0.5) * 80}px`,
+          "--pixel-opacity": (0.12 + Math.random() * 0.18).toFixed(2),
+        },
+      })),
+    [],
+  );
 
   return (
     <section id="top" aria-labelledby="hero-title" className="hero-section">
+      <div className="hero-pixel-field" aria-hidden="true">
+        {risingPixels.map((pixel) => (
+          <span key={pixel.id} className="hero-rising-pixel" style={pixel.style} />
+        ))}
+      </div>
       <div className="pixel-leaf-field" aria-hidden="true">
         <span className="pixel-leaf leaf-one" />
         <span className="pixel-leaf leaf-two" />

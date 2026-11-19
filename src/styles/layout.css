@@ -190,9 +190,27 @@
   z-index: -1;
   inset: 0;
   background-image: linear-gradient(rgb(0 0 0 / 5%) 1px, transparent 1px), linear-gradient(90deg, rgb(0 0 0 / 5%) 1px, transparent 1px);
-  background-size: 32px 32px;
+  background-size: 16px 16px;
   content: "";
   pointer-events: none;
+}
+.hero-pixel-field {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.hero-rising-pixel {
+  position: absolute;
+  bottom: -10px;
+  left: var(--pixel-left);
+  width: var(--pixel-size);
+  aspect-ratio: 1;
+  background: var(--color-ink);
+  opacity: 0;
+  animation: pixel-rise var(--pixel-duration) linear var(--pixel-delay) infinite;
+  will-change: transform, opacity;
 }
 .hero-layout {
   position: relative;
