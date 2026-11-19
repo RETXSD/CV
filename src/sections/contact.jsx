@@ -27,7 +27,7 @@ export function Contact() {
       <div className="contact-panel" data-reveal>
         <ul className="contact-grid">
           {entries.map((entry) => (
-            <li className="contact-item" key={entry.href}>
+            <li className="contact-item" key={entry.href} data-reveal>
               <span className="contact-kind">{entry.kind}</span>
               {entry.external ? (
                 <ExternalLink className="contact-link" href={entry.href}>

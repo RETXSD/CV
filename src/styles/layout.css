@@ -114,6 +114,9 @@
   height: 32px;
   justify-self: center;
   transform: rotate(90deg);
+  --arrow-shift-x: 0px;
+  --arrow-shift-y: 4px;
+  animation: education-arrow-float 1.8s steps(2, end) infinite;
 }
 @media (min-width: 700px) {
   .page-shell {
@@ -132,6 +135,8 @@
   .education-arrow {
     transform: none;
     align-self: center;
+    --arrow-shift-x: 4px;
+    --arrow-shift-y: 0px;
   }
 }
 
@@ -458,6 +463,13 @@ main > .content-section:nth-of-type(even) {
   border: 2px solid var(--color-ink);
   background: var(--color-secondary);
   box-shadow: var(--shadow-sm);
+  transition:
+    transform 140ms steps(2, end),
+    box-shadow 140ms ease;
+}
+.contact-item:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--color-ink);
 }
 .contact-kind {
   color: var(--color-tertiary);

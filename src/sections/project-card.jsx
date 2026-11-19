@@ -4,7 +4,7 @@ import { ExternalLink } from "@/components/ui/external-link";
 
 export function ProjectCard({ project }) {
   return (
-    <div className={project.links.length > 0 ? "project-frame project-frame-linked" : "project-frame"}>
+    <div className={project.links.length > 0 ? "project-frame project-frame-linked" : "project-frame"} data-reveal>
       <Card title={project.title}>
         <p className="font-body text-ink text-sm leading-normal">
           {project.kind}{project.year && ` · ${project.year}`}

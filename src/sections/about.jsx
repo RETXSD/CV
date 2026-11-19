@@ -8,7 +8,9 @@ export function About() {
 
   return (
     <Section id="about" title={messages[language].sections.about}>
-      <p className="about-note font-body text-md leading-body text-ink">{content.summary}</p>
+      <p className="about-note font-body text-md leading-body text-ink" data-reveal>
+        {content.summary}
+      </p>
     </Section>
   );
 }
