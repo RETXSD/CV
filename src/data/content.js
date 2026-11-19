@@ -80,6 +80,22 @@ export const content = {
       ],
       badge: "Simulasi Wokwi",
     },
+    {
+      title: "Nihonggo — Aplikasi Belajar Bahasa Jepang",
+      kind: "Proyek pribadi",
+      year: null,
+      description:
+        "Aplikasi iOS untuk belajar bahasa Jepang dengan materi JLPT N5–N1, latihan kana, kamus lokal, pelafalan audio, pemindaian kana dengan Core ML, OCR kalimat, dan tutor AI multibahasa.",
+      tools: ["Swift", "SwiftUI", "Core ML", "Vision", "AVFoundation"],
+      role: "Proyek solo",
+      links: [
+        {
+          label: "GitHub: Lihat kode",
+          url: "https://github.com/RETXSD/Ios/tree/main/Nihonggo",
+        },
+      ],
+      badge: null,
+    },
   ],
   skills: {
     technical: ["Java (Spring Boot)", "JavaScript", "Python", "SQL", "HTML", "CSS"],

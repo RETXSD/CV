@@ -42,6 +42,15 @@ const contentEnglish = {
         label: link.label.includes("Publisher") ? "Wokwi simulation: Publisher" : "Wokwi simulation: Subscriber",
       })),
     },
+    {
+      ...content.projects[3],
+      title: "Nihonggo — Japanese Learning App",
+      kind: "Personal project",
+      description:
+        "An iOS app for learning Japanese with JLPT N5–N1 lessons, kana practice, a local dictionary, audio pronunciation, Core ML kana scanning, sentence OCR, and a multilingual AI tutor.",
+      role: "Solo project",
+      links: content.projects[3].links.map((link) => ({ ...link, label: "GitHub: View source" })),
+    },
   ],
   skills: {
     ...content.skills,

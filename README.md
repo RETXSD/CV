@@ -7,7 +7,7 @@ Website CV dan portofolio satu halaman untuk memperkenalkan Cornelius Adrian Put
 - **Beranda:** perkenalan singkat dan foto profil dengan efek pixel yang bisa dijelajahi menggunakan mouse atau sentuhan.
 - **Tentang:** ringkasan profil dan bidang yang diminati.
 - **Pendidikan:** riwayat studi dan IPK.
-- **Proyek:** contoh proyek kuliah, termasuk sistem admin RBAC, task manager Java, dan monitoring ketinggian air berbasis IoT.
+- **Proyek:** sistem admin RBAC, task manager Java, monitoring IoT, dan Nihonggo—aplikasi iOS untuk belajar bahasa Jepang.
 - **Keterampilan:** bahasa pemrograman, tools, kemampuan personal, dan bahasa.
 - **Kontak:** cara menghubungi pemilik portofolio.
 

@@ -7,7 +7,7 @@ export function ProjectCard({ project }) {
     <div className={project.links.length > 0 ? "project-frame project-frame-linked" : "project-frame"}>
       <Card title={project.title}>
         <p className="font-body text-ink text-sm leading-normal">
-          {project.kind} · {project.year}
+          {project.kind}{project.year && ` · ${project.year}`}
         </p>
         <p className="project-description font-body text-md leading-body text-ink">{project.description}</p>
         <div className="flex flex-wrap gap-2">
