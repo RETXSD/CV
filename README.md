@@ -1,48 +1,76 @@
-# CV
+# Portofolio Web — Cornelius Adrian Putra
 
-Portofolio web Cornelius Adrian Putra.
+Website CV dan portofolio satu halaman untuk memperkenalkan Cornelius Adrian Putra, mahasiswa Sistem Informasi dan Software Engineering. Situs ini merangkum latar belakang, pendidikan, proyek, keterampilan, dan informasi kontak agar calon kolaborator atau perekrut dapat mengenal pemiliknya dengan cepat.
 
-Situs CV satu halaman dengan Vite, React, dan Tailwind CSS v4.
+## Isi situs
 
-## Menjalankan proyek
+- **Beranda:** perkenalan singkat dan foto profil dengan efek pixel yang bisa dijelajahi menggunakan mouse atau sentuhan.
+- **Tentang:** ringkasan profil dan bidang yang diminati.
+- **Pendidikan:** riwayat studi dan IPK.
+- **Proyek:** contoh proyek kuliah, termasuk sistem admin RBAC, task manager Java, dan monitoring ketinggian air berbasis IoT.
+- **Keterampilan:** bahasa pemrograman, tools, kemampuan personal, dan bahasa.
+- **Kontak:** cara menghubungi pemilik portofolio.
+
+Antarmuka menggunakan tema pixel art bernuansa retro, tata letak responsif, pilihan Bahasa Indonesia dan Inggris, serta animasi dekoratif daun pixel. Bagian foto profil mendukung interaksi hover di perangkat dengan mouse dan sentuhan di ponsel.
+
+## Teknologi
+
+- **React 19** untuk komponen dan antarmuka.
+- **Vite 6** untuk server pengembangan dan build produksi.
+- **Tailwind CSS v4** serta CSS proyek untuk tata letak, tema, dan animasi.
+- **Vercel Web Analytics** untuk menghitung kunjungan dan page views setelah fitur Analytics diaktifkan pada proyek Vercel.
+
+## Menjalankan secara lokal
+
+Pastikan Node.js dan npm sudah terpasang, lalu jalankan dari folder proyek:
 
 ```bash
 npm install
 npm run dev
 ```
 
-Build produksi memakai `npm run build`; pratinjau hasil build memakai `npm run preview`. `npm run lint` memeriksa kode dan `npm run format` merapikan berkas proyek.
+Buka alamat lokal yang ditampilkan Vite di terminal (biasanya `http://localhost:5173`).
 
-## Mengubah isi CV
+Perintah lain:
 
-Semua isi halaman berada di `src/data/content.js`. Perbarui teks dan daftar di sana. Nilai kontak atau proyek yang belum tersedia dibiarkan `null` atau array kosong agar tidak ditampilkan. File PDF ada di `public/cv/`; ubah `cvFile` hanya jika nama file di folder itu sesuai.
+| Perintah | Kegunaan |
+| --- | --- |
+| `npm run build` | Membuat build produksi ke folder `dist/`. |
+| `npm run preview` | Menjalankan pratinjau lokal dari build produksi. |
+| `npm run lint` | Memeriksa kode dengan ESLint. |
+| `npm run format` | Merapikan format berkas proyek dengan Prettier. |
 
-## Deploy ke GitHub Pages
+## Mengubah isi portofolio
 
-Build mendeteksi `GITHUB_REPOSITORY` saat dijalankan di GitHub Actions dan mengatur base URL mengikuti nama repo. Secara lokal base URL adalah `/`. Unggah isi `dist/` sebagai artifact Pages.
+- Ubah profil, pendidikan, proyek, keterampilan, dan kontak di [`src/data/content.js`](src/data/content.js).
+- Ubah teks terjemahan bahasa Inggris di [`src/data/content-translations.js`](src/data/content-translations.js).
+- Label antarmuka dan pesan bahasa berada di [`src/lib/locale.jsx`](src/lib/locale.jsx).
+- Foto, ikon, dan dekorasi visual berada di `src/assets/`.
+- File CV PDF disimpan di `public/cv/`. Pastikan nilai `cvFile` di `src/data/content.js` cocok dengan nama file di folder tersebut.
 
-## Pilihan UI dan dependensi
+Nilai kontak atau tautan yang belum tersedia bisa dibiarkan `null`, dan daftar yang belum memiliki isi bisa dibiarkan kosong supaya elemen terkait tidak ditampilkan.
 
-BoldKit dipilih sebagai library utama untuk pola komponen neubrutalism. Lisensi MIT, dukungan React 19, Tailwind v4, dan theming berbasis CSS variable diverifikasi pada 17 November 2026. Struktur varian Button diadaptasi dari [registry Button BoldKit](https://boldkit.dev/r/button.json); Card dan Badge dibuat lokal dengan API singkat dan token brief. Tidak ada runtime library BoldKit atau gaya dark mode.
+## Deploy
 
-- `@tailwindcss/vite`: plugin resmi agar Tailwind CSS v4 berjalan di Vite.
-- `@vitejs/plugin-react`: transform JSX dan Fast Refresh untuk aplikasi React di Vite.
-- `class-variance-authority`: varian Button dan Badge dengan API yang tetap mudah dibaca.
-- `clsx`: menyusun class kondisional untuk helper `cn`.
-- `tailwind-merge`: menggabungkan utility class tanpa konflik.
-- `@fontsource/pixelify-sans` dan `@fontsource/press-start-2p`: self-host font pixel yang diminta.
-- `eslint-plugin-react-hooks` dan `eslint-plugin-react-refresh`: aturan hooks React dan dukungan refresh Vite.
-- `eslint-plugin-react`: memastikan ESLint mengenali komponen yang digunakan sebagai tag JSX.
-- `@eslint/js` dan `globals`: konfigurasi ESLint flat dan global browser/Node.
-- `prettier` dan `prettier-plugin-tailwindcss`: format kode dan urutan utility Tailwind.
+### Vercel
 
-## Peta folder
+Hubungkan repository GitHub ini ke Vercel dan deploy sebagai proyek Vite. Jika repository sudah terhubung, push ke branch deployment (biasanya `main`) akan membuat deployment baru.
 
-- `public/`: favicon, gambar Open Graph, dan PDF CV.
-- `src/data/content.js`: semua data dan teks CV.
-- `src/styles/globals.css`: token warna, tipografi, bentuk, bayangan, dan gerak.
-- `src/styles/base.css`, `layout.css`, `motion.css`: aturan dasar, tata letak, dan animasi.
-- `src/components/ui/`: Button, Card, Badge, ExternalLink, dan Section.
-- `src/components/layout/`: navbar dan footer.
-- `src/sections/`: satu komponen per bagian halaman.
-- `src/assets/`: foto asli dan versi pixel.
+Komponen Vercel Analytics sudah dipasang di aplikasi. Untuk mulai mengumpulkan data, buka proyek di dashboard Vercel, pilih **Analytics**, lalu aktifkan **Web Analytics**. Data kunjungan akan muncul setelah deployment aktif dan situs dikunjungi.
+
+### GitHub Pages
+
+Konfigurasi Vite menyesuaikan base URL dengan nama repository saat build dijalankan di GitHub Actions. Build lokal menggunakan `/` sebagai base URL. Untuk menerbitkan lewat GitHub Pages, build proyek lalu unggah isi folder `dist/` sebagai artifact Pages.
+
+## Struktur folder
+
+```text
+public/              Aset publik, favicon, gambar Open Graph, dan file CV
+src/
+  assets/            Foto, ikon, audio, dan gambar dekoratif
+  components/        Komponen antarmuka dan layout yang digunakan ulang
+  data/              Isi CV dan terjemahan
+  lib/               Helper, bahasa, dan efek pixel
+  sections/          Bagian-bagian halaman portofolio
+  styles/            Gaya dasar, layout, tema, dan animasi
+```
