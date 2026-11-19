@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-
+import { ExternalLink } from "@/components/ui/external-link";
 
 export function ProjectCard({ project }) {
   return (
@@ -17,6 +17,15 @@ export function ProjectCard({ project }) {
           {project.badge && <Badge tone="alert">{project.badge}</Badge>}
         </div>
         <p className="font-body text-ink text-sm leading-normal">{project.role}</p>
+        {project.links.length > 0 && (
+          <ul className="flex flex-wrap gap-2" aria-label="Tautan proyek">
+            {project.links.map((link) => (
+              <li key={link.url}>
+                <ExternalLink href={link.url}>{link.label}</ExternalLink>
+              </li>
+            ))}
+          </ul>
+        )}
       </Card>
     </div>
   );

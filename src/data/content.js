@@ -36,7 +36,12 @@ export const content = {
       description: "Membangun sistem admin sederhana dengan autentikasi dan pengaturan hak akses berbasis peran (Role-Based Access Control).",
       tools: ["Laravel", "MySQL"],
       role: "Mengerjakan sendiri",
-      links: [],
+      links: [
+        {
+          label: "GitHub: Lihat kode",
+          url: "https://github.com/RETXSD/uas-2025",
+        },
+      ],
       badge: null,
     },
     {
@@ -47,7 +52,12 @@ export const content = {
         "Membangun aplikasi task manager dengan Spring Boot yang menerapkan 9 design pattern: Facade, Factory, Singleton, Decorator, Observer, State, Strategy, Command, dan Builder.",
       tools: ["Java", "Spring Boot", "MySQL"],
       role: "Mengerjakan sendiri",
-      links: [],
+      links: [
+        {
+          label: "GitHub: Lihat kode",
+          url: "https://github.com/RETXSD/todolist-dp26",
+        },
+      ],
       badge: null,
     },
     {
@@ -60,11 +70,11 @@ export const content = {
       role: "Mengerjakan sendiri",
       links: [
         {
-          label: "Demo Wokwi: Publisher",
+          label: "Simulasi Wokwi: Publisher",
           url: "https://wokwi.com/projects/436697444852109313",
         },
         {
-          label: "Demo Wokwi: Subscriber",
+          label: "Simulasi Wokwi: Subscriber",
           url: "https://wokwi.com/projects/436697488285185025",
         },
       ],

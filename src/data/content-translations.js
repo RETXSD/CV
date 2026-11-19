@@ -18,6 +18,7 @@ const contentEnglish = {
       kind: "Course project",
       description: "Built a simple admin system with authentication and role-based access control (RBAC).",
       role: "Solo project",
+      links: content.projects[0].links.map((link) => ({ ...link, label: "GitHub: View source" })),
     },
     {
       ...content.projects[1],
@@ -26,6 +27,7 @@ const contentEnglish = {
       description:
         "Built a Spring Boot task manager applying nine design patterns: Facade, Factory, Singleton, Decorator, Observer, State, Strategy, Command, and Builder.",
       role: "Solo project",
+      links: content.projects[1].links.map((link) => ({ ...link, label: "GitHub: View source" })),
     },
     {
       ...content.projects[2],
@@ -35,6 +37,10 @@ const contentEnglish = {
         "Designed a water-level monitoring system using two ESP32 boards (publisher–subscriber), an HC-SR04 ultrasonic sensor, AES-128 encryption (CBC mode), and MQTT via HiveMQ Cloud with TLS. Readings appear on an OLED display with LED indicators.",
       role: "Solo project",
       badge: "Wokwi simulation",
+      links: content.projects[2].links.map((link) => ({
+        ...link,
+        label: link.label.includes("Publisher") ? "Wokwi simulation: Publisher" : "Wokwi simulation: Subscriber",
+      })),
     },
   ],
   skills: {
