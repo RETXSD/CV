@@ -133,7 +133,8 @@
   .pixel-leaf {
     display: none;
   }
-  .hero-rising-pixel {
+  .hero-rising-pixel,
+  .section-rising-pixel {
     display: none;
   }
   [data-reveal][data-revealed="true"] {
